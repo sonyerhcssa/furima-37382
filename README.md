@@ -38,13 +38,11 @@ Things you may want to cover:
 | last_name          | string      | null: false                    |
 | first_name_kana    | string      | null: false                    |
 | last_name_kana     | string      | null: false                    |
-| b_year             | string      | null: false                    |
-| b_month            | string      | null: false                    |
-| b_day              | string      | null: false                    |
+| birth_day          | date        | null: false                    |
 
 ### Association
 - has_many :items
-- has_one :purchases
+- has_many :purchases
 
 
 ## items
@@ -52,18 +50,18 @@ Things you may want to cover:
 | Column             | Type        | Options                        |
 | ------------------ | ----------- | ------------------------------ |
 | item_name          | string      | null: false                    |
-| price              | string      | null: false                    |
-| postage            | string      | null: false                    |
-| explanation        | string      | null: false                    |
-| category           | string      | null: false                    |
-| item_status        | string      | null: false                    |
-| shipment_source    | string      | null: false                    |
-| item_send          | string      | null: false                    |
+| price              | int         | null: false                    |
+| explanation        | text        | null: false                    |
+| postage_id         | integer     | null: false                    |
+| category_id        | integer     | null: false                    |
+| item_status_id     | integer     | null: false                    |
+| prefecture_id      | integer     | null: false                    |
+| item_send_id       | integer     | null: false                    |
 | user               | references  | null: false, foreign_key: true |
 
 ### Association
-- belongs_to :users
-- has_one :purchases
+- belongs_to :user
+- has_one :purchase
 - has_one_attached :image
 
 
@@ -71,15 +69,27 @@ Things you may want to cover:
 
 | Column             | Type        | Options                        |
 | ------------------ | ----------- | ------------------------------ |
-| post_code          | string      | null: false                    |
-| prefecture         | string      | null: false                    |
-| city               | string      | null: false                    |
-| address            | string      | null: false                    |
-| building           | string      | null: false                    |
-| phone_number       | string      | null: false                    |
 | item               | references  | null: false, foreign_key: true |
 | user               | references  | null: false, foreign_key: true |
+| address            | references  | null: false, foreign_key: true |
 
 ### Association
-- belongs_to :items
-- belongs_to :users
+- belongs_to :item
+- belongs_to :user
+- has_one :address
+
+
+##  addressesテーブル
+
+| Column             | Type        | Options                        |
+| ------------------ | ----------- | ------------------------------ |
+| post_code          | string      | null: false                    |
+| prefecture_id      | integer     | null: false                    |
+| city               | string      | null: false                    |
+| address            | string      | null: false                    |
+| building           | string      |                                |
+| phone_number       | string      | null: false                    |
+| purchase           | references  | null: false, foreign_key: true |
+
+### Association
+- belongs_to :address
