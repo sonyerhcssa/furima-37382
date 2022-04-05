@@ -50,7 +50,7 @@ Things you may want to cover:
 | Column             | Type        | Options                        |
 | ------------------ | ----------- | ------------------------------ |
 | item_name          | string      | null: false                    |
-| price              | int         | null: false                    |
+| price              | integer     | null: false                    |
 | explanation        | text        | null: false                    |
 | postage_id         | integer     | null: false                    |
 | category_id        | integer     | null: false                    |
@@ -71,7 +71,6 @@ Things you may want to cover:
 | ------------------ | ----------- | ------------------------------ |
 | item               | references  | null: false, foreign_key: true |
 | user               | references  | null: false, foreign_key: true |
-| address            | references  | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :item
@@ -92,4 +91,4 @@ Things you may want to cover:
 | purchase           | references  | null: false, foreign_key: true |
 
 ### Association
-- belongs_to :address
+- belongs_to :purchase
