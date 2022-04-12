@@ -11,7 +11,10 @@ class User < ApplicationRecord
        format: { with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i }
 
 
-  validates  :first_name, :last_name, :first_name_kana, :last_name_kana,
+  validates  :first_name, :last_name,
        presence: true, format: { with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/ }
+
+  validates  :first_name_kana, :last_name_kana,
+       presence: true, format: { with: /\A[ァ-ヶ一]+\z/ }
 
 end
