@@ -14,11 +14,9 @@ RSpec.describe Item, type: :model do
 
     context '商品の新規登録がうまくいかない時' do
       it '商品画像が空では登録できない' do
-        # @item.image = nil
-        # @item.valid?
-        # # @item.image.attached?
-        # binding.pry
-        # expect(@item.errors.full_messages).to include("Content can't be blank")
+        @item.image = nil
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Image can't be blank")
       end
 
       it '商品名が空では登録できない' do
@@ -82,7 +80,6 @@ RSpec.describe Item, type: :model do
       end
 
       it '価格は半角数値以外で登録できない' do
-        binding.pry
         @item.price = 'あ'
         @item.valid?
         expect(@item.errors.full_messages).to include('Price ¥300~¥9,999,999の間で入力してください')
