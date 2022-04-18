@@ -3,7 +3,7 @@ class Item < ApplicationRecord
   belongs_to :category, :item_status, :postage, :prefecture, :item_send
 
   belongs_to       :user
-  has_one          :purchase
+  # has_one          :purchase
   has_one_attached :image
 
   validates :item_name, :explanation, :image,
