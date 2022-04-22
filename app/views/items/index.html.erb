@@ -128,10 +128,9 @@
     </div>
     <ul class='item-lists'>
 
-      <% unless @items.length == 0 %>
+      <% @items.each do |item| %>
         <li class='list'>
           <%= link_to '#' do %>
-          <% @items.each do |item| %>
             <div class='item-img-content'>
               <%= image_tag item.image, class: "item-img" %>
 
@@ -155,12 +154,10 @@
               </div>
             </div>
           <% end %>
-          <% end %>
         </li>
-      <% else %>
+      <% end %>
 
-        <%# 商品がない場合は以下のダミー商品が表示されるようにしましょう %>
-        <%# 商品がある場合は表示されないようにしましょう %>
+      <% if @items.blank? %>
         <li class='list'>
           <%= link_to '#' do %>
           <%= image_tag "https://tech-master.s3.amazonaws.com/uploads/curriculums/images/Rails1-4/sample.jpg", class: "item-img" %>
@@ -178,8 +175,6 @@
           </div>
           <% end %>
         </li>
-        <%# //商品がある場合は表示されないようにしましょう %>
-        <%# //商品がない場合は以下のダミー商品が表示されるようにしましょう %>
       <% end %>
     </ul>
   </div>
