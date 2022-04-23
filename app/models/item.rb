@@ -1,8 +1,13 @@
 class Item < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to :category, :item_status, :postage, :prefecture, :item_send
 
   belongs_to       :user
+  belongs_to       :postage
+  belongs_to       :category
+  belongs_to       :item_status
+  belongs_to       :prefecture
+  belongs_to       :item_send
+
   # has_one          :purchase
   has_one_attached :image
 
