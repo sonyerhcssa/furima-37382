@@ -53,7 +53,7 @@ RSpec.describe PurchaseAddress, type: :model do
       it 'phone_numberが10桁以上11桁以内の半角数値のみ保存可能なこと' do
         @purchase_address.phone_number = '123456789'
         @purchase_address.valid?
-        expect(@purchase_address.errors.full_messages).to include("Phone number is invalid")
+        expect(@purchase_address.errors.full_messages).to include('Phone number is invalid')
       end
       it 'tokenが空では登録できないこと' do
         @purchase_address.token = nil
