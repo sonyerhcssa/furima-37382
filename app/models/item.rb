@@ -8,7 +8,7 @@ class Item < ApplicationRecord
   belongs_to       :prefecture
   belongs_to       :item_send
 
-  # has_one          :purchase
+  has_one          :purchase
   has_one_attached :image
 
   validates :item_name, :explanation, :image,
