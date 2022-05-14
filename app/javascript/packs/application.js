@@ -18,4 +18,3 @@ require("../card")
 // const imagePath = (name) => images(name, true)
 
 require("../item_price")
-require("../profit_price")
