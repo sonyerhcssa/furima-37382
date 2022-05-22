@@ -1,0 +1,20 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        nickname: ニックネーム
+        birth_day: 誕生日
+        first_name: 姓
+        last_name: 名前
+        first_name_kana: 姓のカナ
+        last_name_kana: 名前のカナ
+      item:
+        item_name: 商品名
+        explanation: 説明
+        image: 画像
+        category_id: カテゴリー
+        item_status_id: 商品の状態
+        postage_id: 配送料
+        prefecture_id: 発送元
+        item_send_id: 発送までの日数
+        price: 価格
