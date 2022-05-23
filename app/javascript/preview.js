@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', function(){
   const previewList = document.getElementById('previews');
   // 新規投稿・編集ページのフォームがないならここで終了
   if (!itemForm) return null;
-  console.log("preview.jsが読み込まれました");
 
   // input要素を取得
   const fileField = document.querySelector('input[type="file"][name="item[image]"]');
