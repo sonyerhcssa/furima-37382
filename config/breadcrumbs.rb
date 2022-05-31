@@ -21,3 +21,13 @@ crumb :user_registrations do
   link "会員登録", root_path
   parent :root
 end
+
+crumb :item_search do
+  link "検索結果", root_path
+  parent :root
+end
+
+crumb :card_new do
+  link "マイページ", root_path
+  parent :root
+end
