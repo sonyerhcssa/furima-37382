@@ -34,6 +34,8 @@
 
     <%= form_with model: @purchase_address, url: item_purchases_path, id: 'charge-form', class: 'transaction-form-wrap',local: true do |f| %>
     <%= render 'shared/error_messages', model: f.object %>
+    
+    <% unless @card.present? %>
     <%# カード情報の入力 %>
     <div class='credit-card-form'>
       <h1 class='info-input-haedline'>
@@ -73,6 +75,8 @@
       </div>
     </div>
     <%# /カード情報の入力 %>
+    
+    <% else %>
     
     <%# 配送先の入力 %>
     <div class='shipping-address-form'>
@@ -126,6 +130,7 @@
     <div class='buy-btn'>
       <%= f.submit "購入" ,class:"buy-red-btn", id:"button" %>
     </div>
+    <% end %>
     <% end %>
   </div>
 </div>
