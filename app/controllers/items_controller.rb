@@ -23,7 +23,7 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @comments = @item.comments.includes(:user_id) #確認
+    @comments = @item.comments.includes(:user)
     @comment = Comment.new
   end
 
