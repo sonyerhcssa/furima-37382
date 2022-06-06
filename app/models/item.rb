@@ -7,6 +7,8 @@ class Item < ApplicationRecord
   belongs_to       :item_status
   belongs_to       :prefecture
   belongs_to       :item_send
+  
+  has_many         :comments
 
   has_one          :purchase
   has_one_attached :image
