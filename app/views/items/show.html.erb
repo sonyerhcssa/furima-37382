@@ -90,18 +90,20 @@
       </div>
     <% end %>
   </div>
-  <p class="comment-warn">
-    相手のことを考え丁寧なコメントを心がけましょう。
-    <br>
-    不快な言葉遣いなどは利用制限や退会処分となることがあります。
-  </p>
-  <%= form_with model: [@item, @comment], id: "comment-form" do |f| %>
-    <%= f.text_area :text , class: "comment-text"%>
-    <button type="submit" class="comment-btn">
-    <%= image_tag "comment.png" ,class:"comment-flag-icon" ,width:"20",height:"25"%>
-    <%= f.submit "コメントをする", class: "comment-submit", style: "display: none;" %>
-    <span>コメントする<span>
-    </button>
+  <% if user_signed_in? %>
+    <p class="comment-warn">
+      相手のことを考え丁寧なコメントを心がけましょう。
+      <br>
+      不快な言葉遣いなどは利用制限や退会処分となることがあります。
+    </p>
+    <%= form_with model: [@item, @comment], id: "comment-form" do |f| %>
+      <%= f.text_area :text , class: "comment-text"%>
+      <button type="submit" class="comment-btn">
+      <%= image_tag "comment.png" ,class:"comment-flag-icon" ,width:"20",height:"25"%>
+      <%= f.submit "コメントをする", class: "comment-submit", style: "display: none;" %>
+      <span>コメントする<span>
+      </button>
+    <% end %>
   <% end %>
 
   <div class="links">
