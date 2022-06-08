@@ -1,7 +1,7 @@
 class CommentChannel < ApplicationCable::Channel
   def subscribed
     @item = Item.find(params[:item_id])
-    stream_for @item 
+    stream_for @item
   end
 
   def unsubscribed
