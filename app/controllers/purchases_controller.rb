@@ -8,6 +8,7 @@ class PurchasesController < ApplicationController
     # クレジットカードの登録がない場合は、クレジットカードの登録画面へ遷移する
     @card = Card.find_by(user_id: current_user.id)
     redirect_to new_card_path and return unless @card.present?
+
     @purchase_address = PurchaseAddress.new
   end
 
@@ -52,7 +53,6 @@ class PurchasesController < ApplicationController
   end
 
   def set_token
-      @customer_token = current_user.card.customer_token
+    @customer_token = current_user.card.customer_token
   end
-
 end

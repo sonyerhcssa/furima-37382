@@ -7,7 +7,7 @@ class Item < ApplicationRecord
   belongs_to       :item_status
   belongs_to       :prefecture
   belongs_to       :item_send
-  
+
   has_many         :comments
 
   has_one          :purchase
@@ -17,7 +17,7 @@ class Item < ApplicationRecord
             presence: true
 
   validates :image,
-            presence: { message: 'を選択してください'}
+            presence: { message: 'を選択してください' }
 
   validates :category_id, :item_status_id, :postage_id, :prefecture_id, :item_send_id,
             presence: true, numericality: { other_than: 1, message: 'を選択してください' }

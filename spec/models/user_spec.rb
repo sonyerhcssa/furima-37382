@@ -72,7 +72,7 @@ RSpec.describe User, type: :model do
         @user.password = '123456'
         @user.password_confirmation = '1234567'
         @user.valid?
-        expect(@user.errors.full_messages).to include("パスワード（確認用）とパスワードの入力が一致しません", "パスワードは不正な値です")
+        expect(@user.errors.full_messages).to include('パスワード（確認用）とパスワードの入力が一致しません', 'パスワードは不正な値です')
       end
 
       it 'first_nameが空では入力できない' do
@@ -126,7 +126,7 @@ RSpec.describe User, type: :model do
       it 'birth_dayが空では入力できない' do
         @user.birth_day = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include("誕生日を入力してください")
+        expect(@user.errors.full_messages).to include('誕生日を入力してください')
       end
     end
   end
