@@ -4,6 +4,10 @@ Rails.application.configure do
   config.action_cable.url = "wss://furima-37382.herokuapp.com/cable" 
   config.action_cable.allowed_request_origins = ['https://furima-37382.herokuapp.com', 'http://furima-37382.herokuapp.com']
 
+  ActionCable.server.config.disable_request_forgery_protection = true
+  config.action_cable.url = "ws://13.114.132.243/cable" 
+  config.action_cable.allowed_request_origins = ['http://13.114.132.243']
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
